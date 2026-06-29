@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Karbeh Zharie Darjani — Operations & E-commerce VA</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:      #F7F6F2;
+    --ink:     #1A1A2E;
+    --teal:    #1B6C5E;
+    --teal-lt: #E8F3F1;
+    --warm:    #C8976A;
+    --mid:     #5A5A6E;
+    --rule:    #D8D5CD;
+    --white:   #FFFFFF;
+    --serif:   'DM Serif Display', Georgia, serif;
+    --sans:    'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+  }
+  .nav-name {
+    font-family: var(--sans);
+    font-weight: 600; font-size: 0.9rem;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--ink);
+  }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    font-size: 0.85rem; color: var(--mid);
+    text-decoration: none; font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+
+  /* HERO */
+  .hero {
+    padding: 88px 5% 72px;
+    max-width: 860px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-eyebrow {
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block; width: 28px; height: 2px;
+    background: var(--teal);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    line-height: 1.1;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .hero h1 em { font-style: italic; color: var(--teal); }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--mid);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--teal); color: var(--white);
+    padding: 12px 28px; border-radius: 4px;
+    text-decoration: none; font-size: 0.9rem; font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #155048; transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent; color: var(--teal);
+    padding: 12px 28px; border-radius: 4px;
+    border: 1.5px solid var(--teal);
+    text-decoration: none; font-size: 0.9rem; font-weight: 500;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+  .btn-secondary:hover { background: var(--teal-lt); }
+
+  /* TOOLS STRIP */
+  .tools-strip {
+    border-bottom: 1px solid var(--rule);
+    padding: 0 5%;
+    overflow-x: auto;
+  }
+  .tools-inner {
+    display: flex; align-items: center;
+    gap: 0; min-width: max-content;
+  }
+  .tool-item {
+    padding: 18px 26px;
+    border-right: 1px solid var(--rule);
+    display: flex; align-items: center; gap: 10px;
+    white-space: nowrap;
+  }
+  .tool-item:last-child { border-right: none; }
+  .tool-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--teal); flex-shrink: 0;
+  }
+  .tool-name {
+    font-size: 0.82rem; font-weight: 500;
+    color: var(--mid); letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .tool-label {
+    font-size: 0.72rem; color: #9A99A8;
+    margin-left: 4px; font-weight: 300;
+  }
+
+  /* SECTIONS */
+  section { padding: 72px 5%; border-bottom: 1px solid var(--rule); }
+  .section-label {
+    font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--warm); margin-bottom: 40px;
+  }
+
+  /* FEATURED STORE — new section */
+  .store-feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .store-feature-text h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    font-weight: 400; line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .store-feature-text h2 em { font-style: italic; color: var(--teal); }
+  .store-feature-text p {
+    font-size: 0.92rem; color: var(--mid);
+    line-height: 1.8; margin-bottom: 14px;
+  }
+  .store-meta {
+    margin-top: 24px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .store-meta-row {
+    display: flex; gap: 12px; align-items: flex-start;
+    font-size: 0.85rem;
+  }
+  .store-meta-label {
+    font-weight: 600; color: var(--ink);
+    min-width: 80px; flex-shrink: 0;
+  }
+  .store-meta-val { color: var(--mid); }
+  .store-preview {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .store-preview-bar {
+    background: #F0EFEB;
+    border-bottom: 1px solid var(--rule);
+    padding: 10px 14px;
+    display: flex; gap: 6px; align-items: center;
+  }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-r { background: #FF6058; }
+  .dot-y { background: #FFBD2E; }
+  .dot-g { background: #28C840; }
+  .store-url {
+    font-size: 0.72rem; color: #9A99A8;
+    margin-left: 10px; font-family: monospace;
+  }
+  .store-preview-img {
+    background: linear-gradient(160deg, #1A1A2E 0%, #2D3A2E 50%, #1B6C5E 100%);
+    height: 220px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 8px;
+    padding: 24px;
+  }
+  .store-preview-name {
+    font-family: var(--serif);
+    font-size: 1.8rem; color: var(--white);
+    letter-spacing: 0.08em; text-align: center;
+  }
+  .store-preview-tag {
+    font-size: 0.72rem; color: rgba(255,255,255,0.5);
+    letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .store-stats {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid var(--rule);
+  }
+  .store-stat {
+    padding: 16px 18px;
+    border-right: 1px solid var(--rule);
+    text-align: center;
+  }
+  .store-stat:last-child { border-right: none; }
+  .store-stat-num {
+    font-family: var(--serif);
+    font-size: 1.4rem; color: var(--teal);
+  }
+  .store-stat-label {
+    font-size: 0.7rem; color: var(--mid);
+    text-transform: uppercase; letter-spacing: 0.07em;
+  }
+  .store-link {
+    display: block; padding: 14px 18px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.82rem; color: var(--teal);
+    text-decoration: none; text-align: center;
+    font-weight: 500; letter-spacing: 0.03em;
+    transition: background 0.2s;
+  }
+  .store-link:hover { background: var(--teal-lt); }
+
+  /* WORK SAMPLES */
+  .samples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 2px;
+  }
+  .sample-card {
+    background: var(--white);
+    padding: 30px 26px;
+    border: 1px solid var(--rule);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .sample-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 4px 20px rgba(27,108,94,0.08);
+  }
+  .sample-tag {
+    display: inline-block;
+    font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--teal); background: var(--teal-lt);
+    padding: 3px 10px; border-radius: 2px;
+    margin-bottom: 16px;
+  }
+  .sample-card h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem; font-weight: 400;
+    margin-bottom: 10px; line-height: 1.3;
+  }
+  .sample-card p {
+    font-size: 0.87rem; color: var(--mid);
+    line-height: 1.65;
+  }
+  .sample-detail {
+    margin-top: 18px; padding-top: 18px;
+    border-top: 1px solid var(--rule);
+  }
+  .sample-detail-item {
+    font-size: 0.77rem; color: #8A8A9A;
+    display: flex; gap: 8px; margin-bottom: 5px;
+    align-items: flex-start;
+  }
+  .sample-detail-item::before {
+    content: '→'; color: var(--teal); flex-shrink: 0; margin-top: 1px;
+  }
+
+  /* EXPERIENCE */
+  .exp-list { display: flex; flex-direction: column; }
+  .exp-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 24px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .exp-item:last-child { border-bottom: none; }
+  .exp-meta { padding-top: 3px; }
+  .exp-date { font-size: 0.78rem; color: #9A99A8; margin-bottom: 4px; }
+  .exp-co {
+    font-size: 0.82rem; font-weight: 600; color: var(--teal);
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .exp-title {
+    font-family: var(--serif);
+    font-size: 1.1rem; font-weight: 400;
+    margin-bottom: 8px;
+  }
+  .exp-desc { font-size: 0.88rem; color: var(--mid); line-height: 1.7; }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .exp-tag {
+    font-size: 0.72rem; color: var(--mid);
+    border: 1px solid var(--rule);
+    padding: 2px 10px; border-radius: 20px;
+  }
+
+  /* CERTS */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 14px;
+  }
+  .cert-card {
+    border: 1px solid var(--rule);
+    padding: 22px 20px;
+    background: var(--white);
+  }
+  .cert-icon { font-size: 1.1rem; margin-bottom: 12px; }
+  .cert-card h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; color: var(--ink); }
+  .cert-card p { font-size: 0.78rem; color: var(--mid); }
+  .cert-status {
+    display: inline-block; margin-top: 10px;
+    font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--teal);
+  }
+  .cert-year { font-size: 0.7rem; color: #9A99A8; margin-top: 2px; display: block; }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 64px; align-items: start;
+  }
+  .about-text h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 400; line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .about-text p {
+    font-size: 0.95rem; color: var(--mid);
+    line-height: 1.8; margin-bottom: 16px;
+  }
+  .about-sidebar {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    padding: 26px 22px;
+  }
+  .sidebar-row {
+    padding: 11px 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex; gap: 12px;
+  }
+  .sidebar-row:last-child { border-bottom: none; }
+  .sidebar-label {
+    font-size: 0.72rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: #9A99A8; min-width: 76px; padding-top: 2px;
+  }
+  .sidebar-val { font-size: 0.87rem; color: var(--ink); line-height: 1.5; }
+
+  /* CONTACT */
+  .contact-band {
+    background: var(--ink); color: var(--white);
+    padding: 64px 5%;
+    display: flex; align-items: center;
+    justify-content: space-between; flex-wrap: wrap; gap: 32px;
+  }
+  .contact-band h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 400;
+  }
+  .contact-band h2 em { color: #7EC8BB; font-style: italic; }
+  .contact-links { display: flex; flex-direction: column; gap: 12px; }
+  .contact-link {
+    color: #B0BEC5; text-decoration: none;
+    font-size: 0.9rem;
+    display: flex; gap: 10px; align-items: center;
+    transition: color 0.2s;
+  }
+  .contact-link:hover { color: #7EC8BB; }
+  .contact-link span { color: #7EC8BB; font-size: 0.75rem; min-width: 20px; }
+
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 5%;
+    font-size: 0.75rem; color: #5A6A72;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+
+  @media (max-width: 720px) {
+    .exp-item { grid-template-columns: 1fr; gap: 6px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .store-feature { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .hero { padding: 56px 5% 48px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-name">Karbeh Zharie Darjani</span>
+  <div class="nav-links">
+    <a href="#store">Demo Store</a>
+    <a href="#work">Work Samples</a>
+    <a href="#experience">Experience</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Operations & E-commerce VA · Available Now</div>
+  <h1>I keep ecommerce<br>operations <em>running smoothly.</em></h1>
+  <p class="hero-sub">
+    5+ years across Shopify backend management, CRM pipelines, lead generation workflows,
+    and customer support operations. HubSpot certified. Based in Madrid. Remote-ready across any time zone.
+  </p>
+  <div class="hero-cta">
+    <a href="#store" class="btn-primary">See my demo store</a>
+    <a href="#contact" class="btn-secondary">Get in touch</a>
+  </div>
+</div>
+
+<!-- TOOLS STRIP -->
+<div class="tools-strip">
+  <div class="tools-inner">
+    <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Shopify</span><span class="tool-label">Backend · Orders · Flow Automations</span></div>
+    <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">HubSpot</span><span class="tool-label">CRM · Pipelines · Sales Hub</span></div>
+    <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Gorgias</span><span class="tool-label">Support Ticketing</span></div>
+    <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Notion</span><span class="tool-label">SOPs · Workflow Docs</span></div>
+    <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Google Workspace</span><span class="tool-label">Sheets · Docs · Gmail</span></div>
+    <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Zapier</span><span class="tool-label">Automation</span></div>
+    <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Slack · Zoom</span><span class="tool-label">Remote Collaboration</span></div>
+  </div>
+</div>
+
+<!-- DEMO STORE FEATURE -->
+<section id="store">
+  <div class="section-label">Featured Project</div>
+  <div class="store-feature">
+    <div class="store-feature-text">
+      <h2>Nord &amp; Oak —<br>a <em>fully operational</em> Shopify store.</h2>
+      <p>
+        Built from scratch as a demonstration of end-to-end Shopify operations. Nord &amp; Oak is a
+        workspace accessories brand — 14 products across multiple collections, complete with
+        variants, metafields, inventory tracking, and Shopify Flow automations.
+      </p>
+      <p>
+        Every aspect of the store reflects real VA work: product catalog management, order processing,
+        fulfillment workflows, refund handling, shipping configuration, policy pages, FAQ documentation,
+        and brand copywriting throughout.
+      </p>
+      <div class="store-meta">
+        <div class="store-meta-row">
+          <span class="store-meta-label">Platform</span>
+          <span class="store-meta-val">Shopify (Craft theme)</span>
+        </div>
+        <div class="store-meta-row">
+          <span class="store-meta-label">Niche</span>
+          <span class="store-meta-val">Workspace & productivity accessories</span>
+        </div>
+        <div class="store-meta-row">
+          <span class="store-meta-label">Built</span>
+          <span class="store-meta-val">June 2026 · from zero in 5 days</span>
+        </div>
+        <div class="store-meta-row">
+          <span class="store-meta-label">Highlights</span>
+          <span class="store-meta-val">Flow automations · metafields · full order lifecycle · EUR pricing · policy pages</span>
+        </div>
+      </div>
+    </div>
+    <div class="store-preview">
+      <div class="store-preview-bar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="store-url">nord-and-oak.myshopify.com</span>
+      </div>
+      <div class="store-preview-img">
+        <div class="store-preview-name">NORD &amp; OAK</div>
+        <div class="store-preview-tag">Designed for Focus. Built for Better Workspaces.</div>
+      </div>
+      <div class="store-stats">
+        <div class="store-stat">
+          <div class="store-stat-num">14</div>
+          <div class="store-stat-label">Products</div>
+        </div>
+        <div class="store-stat">
+          <div class="store-stat-num">5+</div>
+          <div class="store-stat-label">Collections</div>
+        </div>
+        <div class="store-stat">
+          <div class="store-stat-num">2</div>
+          <div class="store-stat-label">Automations</div>
+        </div>
+      </div>
+      <a href="https://nord-and-oak.myshopify.com" class="store-link" target="_blank">View live store →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WORK SAMPLES -->
+<section id="work">
+  <div class="section-label">Work Samples</div>
+  <div class="samples-grid">
+
+    <div class="sample-card">
+      <span class="sample-tag">Shopify Ops</span>
+      <h3>Order Issue Resolution SOP</h3>
+      <p>A standard operating procedure for handling the five most common Shopify order issues: wrong item, damaged goods, missing delivery, refund requests, and address errors.</p>
+      <div class="sample-detail">
+        <div class="sample-detail-item">Decision tree with escalation thresholds</div>
+        <div class="sample-detail-item">Refund authority levels documented</div>
+        <div class="sample-detail-item">Built in Notion · ready to hand off to any team</div>
+      </div>
+    </div>
+
+    <div class="sample-card">
+      <span class="sample-tag">Shopify · Admin</span>
+      <h3>Nord &amp; Oak — Full Order Lifecycle</h3>
+      <p>Live demonstration of end-to-end order management inside a real Shopify store: order creation, fulfillment with tracking, and full refund processing across three test scenarios.</p>
+      <div class="sample-detail">
+        <div class="sample-detail-item">Unfulfilled → Fulfilled → Refunded states documented</div>
+        <div class="sample-detail-item">Bogus Gateway test orders via Shopify Partner dev store</div>
+        <div class="sample-detail-item">Flow automations active: high-value order tagging + low stock alert</div>
+      </div>
+    </div>
+
+    <div class="sample-card">
+      <span class="sample-tag">Customer Support</span>
+      <h3>Support Template Library</h3>
+      <p>A Gorgias-ready library of 8 customer response templates covering the full range of ecommerce support scenarios, tagged by type for fast retrieval.</p>
+      <div class="sample-detail">
+        <div class="sample-detail-item">Covers: WISMO, delays, wrong item, refund, damaged, out of stock</div>
+        <div class="sample-detail-item">Tone: professional, warm, brand-neutral</div>
+        <div class="sample-detail-item">Designed for under 2-min response time per ticket</div>
+      </div>
+    </div>
+
+    <div class="sample-card">
+      <span class="sample-tag">CRM · Lead Ops</span>
+      <h3>Lead Pipeline Tracker</h3>
+      <p>A mock CRM lead database modelled on real outreach workflows — the same structure used during 12 months of CRM operations at PEMA.io, rebuilt in Notion and mirrored in HubSpot.</p>
+      <div class="sample-detail">
+        <div class="sample-detail-item">Lifecycle stages: New → Contacted → Follow-up → Closed</div>
+        <div class="sample-detail-item">Outreach cadence, notes, and last-contact tracking</div>
+        <div class="sample-detail-item">Mirrored in HubSpot free portal with deal pipeline and dashboard</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <div class="exp-list">
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">Feb 2024 – Present</div>
+        <div class="exp-co">Sportcify</div>
+      </div>
+      <div>
+        <div class="exp-title">E-commerce & Operations Support Specialist</div>
+        <div class="exp-desc">Managed Shopify backend operations including product uploads, inventory maintenance, and order processing workflows. Resolved customer order issues and collaborated cross-functionally to improve store efficiency and reduce operational disruptions.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Shopify</span>
+          <span class="exp-tag">Order Management</span>
+          <span class="exp-tag">Inventory</span>
+          <span class="exp-tag">Customer Support</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">Nov 2022 – Dec 2024</div>
+        <div class="exp-co">Parlé Mag</div>
+      </div>
+      <div>
+        <div class="exp-title">Digital Content & Operations Support</div>
+        <div class="exp-desc">Managed content scheduling across platforms, maintained editorial calendars, monitored performance metrics, and coordinated publishing workflows for a US-based digital media publication.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Content Ops</span>
+          <span class="exp-tag">Scheduling</span>
+          <span class="exp-tag">Analytics</span>
+          <span class="exp-tag">Remote Coordination</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">Jan 2022 – Dec 2022</div>
+        <div class="exp-co">PEMA.io</div>
+      </div>
+      <div>
+        <div class="exp-title">CRM & Outreach Operations Assistant</div>
+        <div class="exp-desc">Managed CRM systems and maintained structured lead databases. Executed outreach campaigns, tracked KPIs, and organized follow-up workflows to support consistent pipeline performance.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">CRM</span>
+          <span class="exp-tag">Lead Generation</span>
+          <span class="exp-tag">Pipeline Management</span>
+          <span class="exp-tag">Outreach</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">Jan 2021 – Jan 2022</div>
+        <div class="exp-co">ChiroQueens</div>
+      </div>
+      <div>
+        <div class="exp-title">Operations Support — Lead Generation & CRM</div>
+        <div class="exp-desc">Maintained and updated lead tracking systems, supported outreach and follow-up coordination, and ensured reliable data tracking for performance monitoring and reporting.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Lead Tracking</span>
+          <span class="exp-tag">CRM</span>
+          <span class="exp-tag">Pipeline Support</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">2018 – 2021</div>
+        <div class="exp-co">Sutherland</div>
+      </div>
+      <div>
+        <div class="exp-title">Strategic Partner Master Trainer → Technical Trainer</div>
+        <div class="exp-desc">Led trainer certification programs and developed new hire customer service representatives over 3+ years. Consistently achieved 85%+ trainee endorsement rate and 95% satisfaction rating across cohorts.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Training</span>
+          <span class="exp-tag">Process Documentation</span>
+          <span class="exp-tag">Team Development</span>
+          <span class="exp-tag">Customer Service</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certs">
+  <div class="section-label">Certifications</div>
+  <div class="certs-grid">
+    <div class="cert-card">
+      <div class="cert-icon">🎓</div>
+      <h4>HubSpot Sales Hub Software</h4>
+      <p>HubSpot Academy</p>
+      <span class="cert-status">✓ Completed</span>
+      <span class="cert-year">June 2026</span>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🎓</div>
+      <h4>HubSpot Inbound</h4>
+      <p>HubSpot Academy</p>
+      <span class="cert-status">✓ Completed</span>
+      <span class="cert-year">June 2026</span>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🏬</div>
+      <h4>Shopify for Business</h4>
+      <p>Shopify Academy</p>
+      <span class="cert-status">✓ Completed</span>
+      <span class="cert-year">June 2026</span>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">💼</div>
+      <h4>Mini MBA — Business Administration</h4>
+      <p>European Institute of Leadership & Management</p>
+      <span class="cert-status">✓ Completed</span>
+      <span class="cert-year">2025</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2>Operations is where chaos<br>becomes <em style="font-style:italic;color:var(--teal)">a system.</em></h2>
+      <p>
+        I've spent five years making sure things run — orders get fulfilled, leads get followed up,
+        support tickets get answered, and nothing falls through the cracks. That's the work I love,
+        and I'm good at it.
+      </p>
+      <p>
+        My background spans e-commerce operations at Sportcify, CRM management at PEMA.io,
+        content operations at Parlé Mag, and three years training customer service teams at Sutherland.
+        The training background matters: I document processes clearly, onboard fast, and don't need
+        hand-holding once I understand the system.
+      </p>
+      <p>
+        I'm currently based in Madrid, Spain. I work in English (professional level), speak Filipino
+        natively, and am actively learning Spanish. Available immediately for full-time remote roles
+        and open to in-person opportunities in Madrid.
+      </p>
+    </div>
+    <div class="about-sidebar">
+      <div class="sidebar-row">
+        <span class="sidebar-label">Location</span>
+        <span class="sidebar-val">Madrid, Spain<br><span style="font-size:0.77rem;color:#9A99A8">Remote · any time zone</span></span>
+      </div>
+      <div class="sidebar-row">
+        <span class="sidebar-label">Available</span>
+        <span class="sidebar-val">Immediately<br><span style="font-size:0.77rem;color:#9A99A8">Full-time · part-time</span></span>
+      </div>
+      <div class="sidebar-row">
+        <span class="sidebar-label">Languages</span>
+        <span class="sidebar-val">English (professional)<br>Filipino (native)<br>Spanish (learning · A1)</span>
+      </div>
+      <div class="sidebar-row">
+        <span class="sidebar-label">Strong in</span>
+        <span class="sidebar-val">Shopify · HubSpot · Gorgias<br>Notion · Zapier · Google Workspace</span>
+      </div>
+      <div class="sidebar-row">
+        <span class="sidebar-label">LinkedIn</span>
+        <span class="sidebar-val"><a href="https://linkedin.com/in/karbehzharie" style="color:var(--teal);text-decoration:none;">linkedin.com/in/karbehzharie</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-band" id="contact">
+  <div>
+    <h2>Let's work<br><em>together.</em></h2>
+  </div>
+  <div class="contact-links">
+    <a href="mailto:kzharie@gmail.com" class="contact-link">
+      <span>✉</span> kzharie@gmail.com
+    </a>
+    <a href="tel:+34614559283" class="contact-link">
+      <span>☏</span> +34 614 559 283
+    </a>
+    <a href="https://linkedin.com/in/karbehzharie" class="contact-link">
+      <span>in</span> linkedin.com/in/karbehzharie
+    </a>
+  </div>
+</div>
+
+<footer>
+  <span>Karbeh Zharie Darjani · Operations &amp; E-commerce VA</span>
+  <span>Madrid, Spain · Available for remote roles worldwide</span>
+</footer>
+
+</body>
+</html>
