@@ -199,20 +199,89 @@
     margin-left: 10px; font-family: monospace;
   }
   .store-preview-img {
-    background: linear-gradient(160deg, #1A1A2E 0%, #2D3A2E 50%, #1B6C5E 100%);
     height: 220px;
-    display: flex; align-items: center; justify-content: center;
-    flex-direction: column; gap: 8px;
-    padding: 24px;
+    overflow: hidden;
+    position: relative;
   }
-  .store-preview-name {
+  .store-preview-img img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top center;
+    display: block;
+  }
+
+  /* GALLERY */
+  .gallery-intro {
+    margin: 56px 0 24px;
+  }
+  .gallery-intro h3 {
     font-family: var(--serif);
-    font-size: 1.8rem; color: var(--white);
-    letter-spacing: 0.08em; text-align: center;
+    font-size: 1.25rem; font-weight: 400;
+    margin-bottom: 8px;
   }
-  .store-preview-tag {
-    font-size: 0.72rem; color: rgba(255,255,255,0.5);
-    letter-spacing: 0.14em; text-transform: uppercase;
+  .gallery-intro p { font-size: 0.87rem; color: var(--mid); max-width: 560px; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  .gallery-item {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.15s;
+  }
+  .gallery-item:hover { box-shadow: 0 6px 24px rgba(27,108,94,0.1); transform: translateY(-2px); }
+  .gallery-item-bar {
+    background: #F0EFEB;
+    border-bottom: 1px solid var(--rule);
+    padding: 8px 12px;
+    display: flex; gap: 6px; align-items: center;
+  }
+  .gallery-item img {
+    width: 100%; display: block;
+    max-height: 260px; object-fit: cover; object-position: top center;
+  }
+  .gallery-caption {
+    padding: 12px 16px;
+    font-size: 0.8rem; color: var(--mid);
+    border-top: 1px solid var(--rule);
+  }
+  .gallery-caption strong { color: var(--ink); font-weight: 600; }
+
+  .mobile-row {
+    display: flex; gap: 20px; flex-wrap: wrap;
+  }
+  .mobile-item {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    overflow: hidden;
+    width: 180px;
+    flex-shrink: 0;
+  }
+  .mobile-item-notch {
+    background: #F0EFEB;
+    border-bottom: 1px solid var(--rule);
+    padding: 8px 0;
+    display: flex; justify-content: center;
+  }
+  .mobile-item-notch-bar {
+    width: 40px; height: 5px; border-radius: 3px;
+    background: var(--rule);
+  }
+  .mobile-item img {
+    width: 100%; display: block;
+    max-height: 320px; object-fit: cover; object-position: top center;
+  }
+  .mobile-caption {
+    padding: 10px 14px 14px;
+    font-size: 0.76rem; color: var(--mid); text-align: center;
+  }
+
+  @media (max-width: 720px) {
+    .gallery-grid { grid-template-columns: 1fr; }
   }
   .store-stats {
     display: grid; grid-template-columns: 1fr 1fr 1fr;
@@ -498,8 +567,7 @@
         <span class="store-url">nord-and-oak.myshopify.com</span>
       </div>
       <div class="store-preview-img">
-        <div class="store-preview-name">NORD &amp; OAK</div>
-        <div class="store-preview-tag">Designed for Focus. Built for Better Workspaces.</div>
+        <img src="assets/homepage.jpg" alt="Nord & Oak homepage screenshot" loading="lazy">
       </div>
       <div class="store-stats">
         <div class="store-stat">
@@ -517,6 +585,101 @@
       </div>
       <a href="https://nord-and-oak.myshopify.com" class="store-link" target="_blank">View live store → (password: karbeh)</a>
       <a href="https://vigorous-chef-c26.notion.site/Nord-Oak-Shopify-Demo-Store-38e81366524c8041884af6a70fc3f92e" class="store-link" style="border-top:none;color:var(--mid);font-size:0.78rem;" target="_blank">View full case study →</a>
+    </div>
+  </div>
+
+  <div class="gallery-intro">
+    <h3>See it in action</h3>
+    <p>A closer look at the store's storefront features — mega menu navigation, a discount capture popup, product catalog, and a full PDP with variant selection.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <div class="gallery-item-bar">
+        <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+      </div>
+      <img src="assets/mega-menu.jpg" alt="Nord & Oak mega menu navigation" loading="lazy">
+      <div class="gallery-caption"><strong>Mega menu</strong> — custom navigation built for easy category browsing</div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-bar">
+        <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+      </div>
+      <img src="assets/discount-popup.jpg" alt="Nord & Oak discount popup" loading="lazy">
+      <div class="gallery-caption"><strong>Email capture popup</strong> — first-order discount flow with signup form</div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-bar">
+        <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+      </div>
+      <img src="assets/bestsellers.jpg" alt="Nord & Oak bestsellers collection page" loading="lazy">
+      <div class="gallery-caption"><strong>Collection page</strong> — filterable Bestsellers grid with sale pricing</div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-bar">
+        <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+      </div>
+      <img src="assets/product-page.jpg" alt="Nord & Oak product detail page" loading="lazy">
+      <div class="gallery-caption"><strong>Product page</strong> — variant selector, gallery, and related products</div>
+    </div>
+  </div>
+
+  <div class="mobile-row">
+    <div class="mobile-item">
+      <div class="mobile-item-notch"><div class="mobile-item-notch-bar"></div></div>
+      <img src="assets/mobile-homepage.jpg" alt="Nord & Oak mobile homepage" loading="lazy">
+      <div class="mobile-caption">Mobile homepage</div>
+    </div>
+    <div class="mobile-item">
+      <div class="mobile-item-notch"><div class="mobile-item-notch-bar"></div></div>
+      <img src="assets/mobile-products.jpg" alt="Nord & Oak mobile product listing" loading="lazy">
+      <div class="mobile-caption">Mobile product listing</div>
+    </div>
+  </div>
+
+  <div class="gallery-intro">
+    <h3>Behind the scenes — Shopify admin</h3>
+    <p>The storefront is the visible half. This is the backend operations work: order lifecycle, Flow automations, inventory, shipping configuration, and catalog management.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <div class="gallery-item-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+      <img src="assets/flow-workflow.jpg" alt="Shopify Flow automation workflow" loading="lazy">
+      <div class="gallery-caption"><strong>Flow automation</strong> — auto-tags and emails staff on high-value orders</div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+      <img src="assets/flow-list.jpg" alt="List of active Shopify Flow workflows" loading="lazy">
+      <div class="gallery-caption"><strong>4 active workflows</strong> — order tagging, abandoned checkout recovery, low-stock alerts</div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+      <img src="assets/orders-list.jpg" alt="Shopify orders list showing different statuses" loading="lazy">
+      <div class="gallery-caption"><strong>Order lifecycle</strong> — paid, unfulfilled, partially refunded, and refunded states</div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+      <img src="assets/fulfilled-order.jpg" alt="Fulfilled Shopify order with tracking" loading="lazy">
+      <div class="gallery-caption"><strong>Order detail</strong> — fulfillment, DHL tracking, and customer info</div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+      <img src="assets/inventory.jpg" alt="Shopify inventory management across products" loading="lazy">
+      <div class="gallery-caption"><strong>Inventory tracking</strong> — stock levels across 14 products and variants</div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+      <img src="assets/shipping-settings.jpg" alt="Shopify shipping and delivery settings" loading="lazy">
+      <div class="gallery-caption"><strong>Shipping setup</strong> — profiles, delivery estimates, and carrier accounts</div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+      <img src="assets/shipping-zones.jpg" alt="Shopify shipping zones and rates" loading="lazy">
+      <div class="gallery-caption"><strong>Shipping zones</strong> — domestic + international rates, DHL & USPS integration</div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
+      <img src="assets/product-admin.jpg" alt="Shopify product catalog admin with metafields" loading="lazy">
+      <div class="gallery-caption"><strong>Catalog management</strong> — variants, category metafields, and SEO listing</div>
     </div>
   </div>
 </section>
