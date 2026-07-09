@@ -429,6 +429,18 @@
     border: 1px solid var(--rule);
     padding: 26px 22px;
   }
+  .about-photo {
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 22px;
+    border: 1px solid var(--rule);
+  }
+  .about-photo img {
+    width: 100%; display: block;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
   .sidebar-row {
     padding: 11px 0;
     border-bottom: 1px solid var(--rule);
@@ -899,6 +911,9 @@
       </p>
     </div>
     <div class="about-sidebar">
+      <div class="about-photo">
+        <img src="headshot.jpg" alt="Karbeh Zharie Darjani">
+      </div>
       <div class="sidebar-row">
         <span class="sidebar-label">Location</span>
         <span class="sidebar-val">Madrid, Spain<br><span style="font-size:0.77rem;color:#9A99A8">Remote · any time zone</span></span>
