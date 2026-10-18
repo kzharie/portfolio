@@ -53,6 +53,8 @@
     text-decoration: none; font-weight: 400;
     transition: color 0.2s;
   }
+  a.nav-name { color: inherit; text-decoration: none; cursor: pointer; }
+  a.nav-name:hover { color: var(--teal); }
   .nav-links a:hover { color: var(--teal); }
 
   /* HERO */
@@ -532,11 +534,11 @@
   }
 </style>
 </head>
-<body>
+<body id="top">
 
 <!-- NAV -->
 <nav>
-  <span class="nav-name">Karbeh Darjani</span>
+  <a href="#top" class="nav-name" aria-label="Back to top">Karbeh Darjani</a>
   <div class="nav-links">
     <a href="#store">Demo Store</a>
     <a href="#work">Work Samples</a>
@@ -1039,7 +1041,7 @@
       </div>
       <div class="sidebar-row">
         <span class="sidebar-label">Location</span>
-        <span class="sidebar-val">Madrid, Spain<br><span style="font-size:0.77rem;color:#9A99A8">Remote · any time zone</span></span>
+        <span class="sidebar-val">Madrid, Spain<br><span style="font-size:0.77rem;color:#9A99A8">Hybrid · in-office · remote</span></span>
       </div>
       <div class="sidebar-row">
         <span class="sidebar-label">Available</span>
