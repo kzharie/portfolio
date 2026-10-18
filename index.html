@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Karbeh Zharie Darjani — Operations & E-commerce VA</title>
+<title>Karbeh Darjani | Operations, CRM &amp; Automation</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -147,7 +147,7 @@
     color: var(--warm); margin-bottom: 40px;
   }
 
-  /* FEATURED STORE — new section */
+  /* FEATURED STORE: new section */
   .store-feature {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -357,6 +357,44 @@
     content: '→'; color: var(--teal); flex-shrink: 0; margin-top: 1px;
   }
 
+  .sample-img {
+    display: block; width: 100%; margin: 4px 0 16px;
+    border: 1px solid var(--rule); border-radius: 2px; background: #F4F4F4;
+  }
+  .ai-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .ai-card { background:var(--white); border:1px solid var(--rule); display:flex; flex-direction:column; transition:border-color .2s, box-shadow .2s; }
+  .ai-card:hover { border-color:var(--teal); box-shadow:0 4px 20px rgba(27,108,94,0.08); }
+  .ai-card > a { display:block; border-bottom:1px solid var(--rule); background:#F2F1EC; }
+  .ai-card img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; object-position:left top; }
+  .ai-card img.fit { object-fit:contain; object-position:center; padding:10px; }
+  .ai-body { padding:20px 22px 22px; }
+  .ai-top { display:flex; justify-content:space-between; align-items:center; gap:8px; margin-bottom:12px; }
+  .ai-top .sample-tag { margin-bottom:0; }
+  .ai-status { font-size:0.68rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; padding:3px 9px; border-radius:20px; white-space:nowrap; }
+  .ai-status.live { color:#1B6C5E; background:#E8F3F1; }
+  .ai-status.paused { color:#8A5A2B; background:#F6EBDD; }
+  .ai-card h3 { font-family:var(--serif); font-size:1.15rem; font-weight:400; margin-bottom:6px; }
+  .ai-card p { font-size:0.86rem; color:var(--mid); line-height:1.6; margin-bottom:12px; }
+  .ai-steps { aspect-ratio:16/9; display:flex; flex-wrap:wrap; align-content:center; justify-content:center; gap:8px; padding:18px; background:var(--teal-lt); border-bottom:1px solid var(--rule); }
+  .ai-steps span { font-size:0.78rem; font-weight:600; color:var(--teal); background:var(--white); border:1px solid #CFE3DF; padding:6px 10px; border-radius:2px; }
+  .ai-steps i { font-style:normal; color:var(--teal); align-self:center; }
+  #work .ai-card img, #work .ai-visual { height:210px; aspect-ratio:auto; }
+  #work .tree .node { padding:5px 8px; font-size:0.7rem; }
+  .ai-card h3 { line-height:1.3; }
+  #work .ai-grid { grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); }
+  .ai-card > a.ai-visual { background:var(--teal-lt); }
+  .ai-link { display:inline-block; margin-top:4px; font-size:0.8rem; color:var(--teal); text-decoration:none; font-weight:500; }
+  .ai-visual { aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; padding:16px; background:var(--teal-lt); border-bottom:1px solid var(--rule); text-decoration:none; }
+  .tree { display:flex; flex-direction:column; align-items:center; gap:4px; width:100%; }
+  .tree i { font-style:normal; color:var(--teal); font-size:0.8rem; line-height:1; }
+  .tree .node { font-size:0.74rem; font-weight:600; color:var(--ink); background:var(--white); border:1px solid #CFE3DF; padding:6px 10px; border-radius:2px; text-align:center; }
+  .tree .node.soft { font-weight:400; color:var(--mid); max-width:92%; }
+  .tree .node small { font-weight:400; color:var(--mid); font-size:0.68rem; }
+  .tree .split { display:flex; gap:10px; }
+  .tree .node.ok { border-color:#9FD0C5; }
+  .tree .node.warn { border-color:#E7C79F; background:#FBF4EA; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
+  .chips span { font-size:0.78rem; color:var(--teal); background:var(--white); border:1px solid #CFE3DF; padding:7px 12px; border-radius:16px; }
   /* EXPERIENCE */
   .exp-list { display: flex; flex-direction: column; }
   .exp-item {
@@ -498,10 +536,11 @@
 
 <!-- NAV -->
 <nav>
-  <span class="nav-name">Karbeh Zharie Darjani</span>
+  <span class="nav-name">Karbeh Darjani</span>
   <div class="nav-links">
     <a href="#store">Demo Store</a>
     <a href="#work">Work Samples</a>
+    <a href="#ai">AI Projects</a>
     <a href="#experience">Experience</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
@@ -510,15 +549,15 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-eyebrow">Operations & E-commerce VA · Available Now</div>
-  <h1>I keep ecommerce<br>operations <em>running smoothly.</em></h1>
+  <div class="hero-eyebrow">Operations · CRM &amp; RevOps · Automation · Madrid</div>
+  <h1>I build the processes<br>that keep teams <em>running smoothly.</em></h1>
   <p class="hero-sub">
-    5+ years across Shopify backend management, CRM pipelines, lead generation workflows,
-    and customer support operations. HubSpot certified. Based in Madrid. Remote-ready across any time zone.
-    Portfolio: <a href="https://kzharie.github.io/portfolio/" style="color:var(--teal);">kzharie.github.io/portfolio</a>
+    5+ years across operations, CRM and revenue operations, training and enablement, and automation,
+    on the AT&amp;T account and in remote startup teams. HubSpot RevOps certified. Based in Madrid,
+    open to hybrid, in-office and remote roles.
   </p>
   <div class="hero-cta">
-    <a href="#store" class="btn-primary">See my demo store</a>
+    <a href="#work" class="btn-primary">See my work</a>
     <a href="#contact" class="btn-secondary">Get in touch</a>
   </div>
 </div>
@@ -528,10 +567,10 @@
   <div class="tools-inner">
     <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Shopify</span><span class="tool-label">Backend · Orders · Flow Automations</span></div>
     <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">HubSpot</span><span class="tool-label">CRM · Pipelines · Sales Hub</span></div>
-    <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Gorgias</span><span class="tool-label">Support Ticketing</span></div>
+    <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Zendesk</span><span class="tool-label">Support Ticketing</span></div>
     <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Notion</span><span class="tool-label">SOPs · Workflow Docs</span></div>
     <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Google Workspace</span><span class="tool-label">Sheets · Docs · Gmail</span></div>
-    <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Zapier</span><span class="tool-label">Automation</span></div>
+    <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Make · Base44</span><span class="tool-label">Automation · AI &amp; No-Code Builds</span></div>
     <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Slack · Zoom</span><span class="tool-label">Remote Collaboration</span></div>
   </div>
 </div>
@@ -541,14 +580,14 @@
   <div class="section-label">Featured Project</div>
   <div class="store-feature">
     <div class="store-feature-text">
-      <h2>Nord &amp; Oak —<br>a <em>fully operational</em> Shopify store.</h2>
+      <h2>Nord &amp; Oak:<br>a <em>fully operational</em> Shopify store.</h2>
       <p>
         Built from scratch as a demonstration of end-to-end Shopify operations. Nord &amp; Oak is a
-        workspace accessories brand — 14 products across multiple collections, complete with
+        workspace accessories brand with 14 products across multiple collections, complete with
         variants, metafields, inventory tracking, and Shopify Flow automations.
       </p>
       <p>
-        Every aspect of the store reflects real VA work: product catalog management, order processing,
+        Every aspect of the store reflects real operations work: product catalog management, order processing,
         fulfillment workflows, refund handling, shipping configuration, policy pages, FAQ documentation,
         and brand copywriting throughout.
       </p>
@@ -602,7 +641,7 @@
 
   <div class="gallery-intro">
     <h3>See it in action</h3>
-    <p>A closer look at the store's storefront features — mega menu navigation, a discount capture popup, product catalog, and a full PDP with variant selection.</p>
+    <p>A closer look at the store's storefront features: mega menu navigation, a discount capture popup, product catalog, and a full PDP with variant selection.</p>
   </div>
   <div class="gallery-grid">
     <div class="gallery-item">
@@ -610,28 +649,28 @@
         <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
       </div>
       <img src="mega-menu.jpg" alt="Nord & Oak mega menu navigation" loading="lazy">
-      <div class="gallery-caption"><strong>Mega menu</strong> — custom navigation built for easy category browsing</div>
+      <div class="gallery-caption"><strong>Mega menu</strong>: custom navigation built for easy category browsing</div>
     </div>
     <div class="gallery-item">
       <div class="gallery-item-bar">
         <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
       </div>
       <img src="discount-popup.jpg" alt="Nord & Oak discount popup" loading="lazy">
-      <div class="gallery-caption"><strong>Email capture popup</strong> — first-order discount flow with signup form</div>
+      <div class="gallery-caption"><strong>Email capture popup</strong>: first-order discount flow with signup form</div>
     </div>
     <div class="gallery-item">
       <div class="gallery-item-bar">
         <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
       </div>
       <img src="bestsellers.jpg" alt="Nord & Oak bestsellers collection page" loading="lazy">
-      <div class="gallery-caption"><strong>Collection page</strong> — filterable Bestsellers grid with sale pricing</div>
+      <div class="gallery-caption"><strong>Collection page</strong>: filterable Bestsellers grid with sale pricing</div>
     </div>
     <div class="gallery-item">
       <div class="gallery-item-bar">
         <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
       </div>
       <img src="product-page.jpg" alt="Nord & Oak product detail page" loading="lazy">
-      <div class="gallery-caption"><strong>Product page</strong> — variant selector, gallery, and related products</div>
+      <div class="gallery-caption"><strong>Product page</strong>: variant selector, gallery, and related products</div>
     </div>
   </div>
 
@@ -649,49 +688,49 @@
   </div>
 
   <div class="gallery-intro">
-    <h3>Behind the scenes — Shopify admin</h3>
+    <h3>Behind the scenes: Shopify admin</h3>
     <p>The storefront is the visible half. This is the backend operations work: order lifecycle, Flow automations, inventory, shipping configuration, and catalog management.</p>
   </div>
   <div class="gallery-grid">
     <div class="gallery-item">
       <div class="gallery-item-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
       <img src="flow-workflow.jpg" alt="Shopify Flow automation workflow" loading="lazy">
-      <div class="gallery-caption"><strong>Flow automation</strong> — auto-tags and emails staff on high-value orders</div>
+      <div class="gallery-caption"><strong>Flow automation</strong>: auto-tags and emails staff on high-value orders</div>
     </div>
     <div class="gallery-item">
       <div class="gallery-item-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
       <img src="flow-list.jpg" alt="List of active Shopify Flow workflows" loading="lazy">
-      <div class="gallery-caption"><strong>4 active workflows</strong> — order tagging, abandoned checkout recovery, low-stock alerts</div>
+      <div class="gallery-caption"><strong>4 active workflows</strong>: order tagging, abandoned checkout recovery, low-stock alerts</div>
     </div>
     <div class="gallery-item">
       <div class="gallery-item-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
       <img src="orders-list.jpg" alt="Shopify orders list showing different statuses" loading="lazy">
-      <div class="gallery-caption"><strong>Order lifecycle</strong> — paid, unfulfilled, partially refunded, and refunded states</div>
+      <div class="gallery-caption"><strong>Order lifecycle</strong>: paid, unfulfilled, partially refunded, and refunded states</div>
     </div>
     <div class="gallery-item">
       <div class="gallery-item-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
       <img src="fulfilled-order.jpg" alt="Fulfilled Shopify order with tracking" loading="lazy">
-      <div class="gallery-caption"><strong>Order detail</strong> — fulfillment, DHL tracking, and customer info</div>
+      <div class="gallery-caption"><strong>Order detail</strong>: fulfillment, DHL tracking, and customer info</div>
     </div>
     <div class="gallery-item">
       <div class="gallery-item-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
       <img src="inventory.jpg" alt="Shopify inventory management across products" loading="lazy">
-      <div class="gallery-caption"><strong>Inventory tracking</strong> — stock levels across 14 products and variants</div>
+      <div class="gallery-caption"><strong>Inventory tracking</strong>: stock levels across 14 products and variants</div>
     </div>
     <div class="gallery-item">
       <div class="gallery-item-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
       <img src="shipping-settings.jpg" alt="Shopify shipping and delivery settings" loading="lazy">
-      <div class="gallery-caption"><strong>Shipping setup</strong> — profiles, delivery estimates, and carrier accounts</div>
+      <div class="gallery-caption"><strong>Shipping setup</strong>: profiles, delivery estimates, and carrier accounts</div>
     </div>
     <div class="gallery-item">
       <div class="gallery-item-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
       <img src="shipping-zones.jpg" alt="Shopify shipping zones and rates" loading="lazy">
-      <div class="gallery-caption"><strong>Shipping zones</strong> — domestic + international rates, DHL & USPS integration</div>
+      <div class="gallery-caption"><strong>Shipping zones</strong>: domestic + international rates, DHL & USPS integration</div>
     </div>
     <div class="gallery-item">
       <div class="gallery-item-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div></div>
       <img src="product-admin.jpg" alt="Shopify product catalog admin with metafields" loading="lazy">
-      <div class="gallery-caption"><strong>Catalog management</strong> — variants, category metafields, and SEO listing</div>
+      <div class="gallery-caption"><strong>Catalog management</strong>: variants, category metafields, and SEO listing</div>
     </div>
   </div>
 </section>
@@ -699,61 +738,138 @@
 <!-- WORK SAMPLES -->
 <section id="work">
   <div class="section-label">Work Samples</div>
-  <div class="samples-grid">
+  <div class="ai-grid">
 
-    <div class="sample-card">
-      <span class="sample-tag">Shopify Ops</span>
-      <h3>Order Issue Resolution SOP</h3>
-      <p>A standard operating procedure for handling the five most common Shopify order issues: wrong item, damaged goods, missing delivery, refund requests, and address errors.</p>
-      <div class="sample-detail">
-        <div class="sample-detail-item">Decision tree with escalation thresholds</div>
-        <div class="sample-detail-item">Refund authority levels documented</div>
-        <div class="sample-detail-item">Built in Notion · ready to hand off to any team</div>
+    <div class="ai-card">
+      <div class="ai-visual">
+        <div class="tree">
+          <div class="node">Order issue comes in</div><i>↓</i>
+          <div class="node soft">Identify the type: wrong item, damaged, missing, refund, address</div><i>↓</i>
+          <div class="split">
+            <div class="node ok">Up to €100<br><small>resolve directly</small></div>
+            <div class="node warn">Over €100<br><small>escalate to owner</small></div>
+          </div>
+        </div>
       </div>
-      <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--rule);">
-        <a href="https://vigorous-chef-c26.notion.site/Order-Issue-Resolution-SOP-Nord-Oak-38e81366524c80099151ccd99f013029" style="font-size:0.8rem;color:var(--teal);text-decoration:none;font-weight:500;" target="_blank">View work sample →</a>
+      <div class="ai-body">
+        <div class="ai-top"><span class="sample-tag">Shopify Ops · SOP</span></div>
+        <h3>Order Issue Resolution SOP</h3>
+        <p>How to handle the five most common order issues, with clear refund authority and escalation.</p>
+        <a class="ai-link" href="https://vigorous-chef-c26.notion.site/Order-Issue-Resolution-SOP-Nord-Oak-38e81366524c80099151ccd99f013029" target="_blank">View in Notion →</a>
       </div>
     </div>
 
-    <div class="sample-card">
-      <span class="sample-tag">Shopify · Admin</span>
-      <h3>Nord &amp; Oak — Full Order Lifecycle</h3>
-      <p>Live demonstration of end-to-end order management inside a real Shopify store: order creation, fulfillment with tracking, and full refund processing across three test scenarios.</p>
-      <div class="sample-detail">
-        <div class="sample-detail-item">Unfulfilled → Fulfilled → Refunded states documented</div>
-        <div class="sample-detail-item">Bogus Gateway test orders via Shopify Partner dev store</div>
-        <div class="sample-detail-item">Flow automations active: high-value order tagging + low stock alert</div>
-      </div>
-      <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--rule);">
-        <a href="https://vigorous-chef-c26.notion.site/Nord-Oak-Shopify-Demo-Store-38e81366524c8041884af6a70fc3f92e" style="font-size:0.8rem;color:var(--teal);text-decoration:none;font-weight:500;" target="_blank">View case study →</a>
+    <div class="ai-card">
+      <a href="orders-list.jpg" target="_blank"><img src="orders-list.jpg" alt="Shopify orders list showing paid, refunded, partially refunded, unfulfilled and fulfilled orders" loading="lazy"></a>
+      <div class="ai-body">
+        <div class="ai-top"><span class="sample-tag">Shopify · Admin</span></div>
+        <h3>Nord &amp; Oak: Full Order Lifecycle</h3>
+        <p>Test orders taken from creation through fulfillment, tracking and full or partial refunds.</p>
+        <a class="ai-link" href="https://vigorous-chef-c26.notion.site/Nord-Oak-Shopify-Demo-Store-38e81366524c8041884af6a70fc3f92e" target="_blank">View case study →</a>
       </div>
     </div>
 
-    <div class="sample-card">
-      <span class="sample-tag">Customer Support</span>
-      <h3>Support Template Library</h3>
-      <p>A Gorgias-ready library of 8 customer response templates covering the full range of ecommerce support scenarios, tagged by type for fast retrieval.</p>
-      <div class="sample-detail">
-        <div class="sample-detail-item">Covers: WISMO, delays, wrong item, refund, damaged, out of stock</div>
-        <div class="sample-detail-item">Tone: professional, warm, brand-neutral</div>
-        <div class="sample-detail-item">Designed for under 2-min response time per ticket</div>
-      </div>
-      <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--rule);">
-        <a href="https://vigorous-chef-c26.notion.site/Customer-Support-Template-Library-Nord-Oak-38e81366524c80fc807bd96c79bf4af4" style="font-size:0.8rem;color:var(--teal);text-decoration:none;font-weight:500;" target="_blank">View work sample →</a>
+    <div class="ai-card">
+      <a href="support-templates.jpg" target="_blank" class="ai-visual chips-wrap">
+        <div class="chips">
+          <span>Where is my order?</span><span>Delayed order</span><span>Wrong item</span>
+          <span>Refund request</span><span>Damaged item</span><span>Out of stock</span>
+        </div>
+      </a>
+      <div class="ai-body">
+        <div class="ai-top"><span class="sample-tag">Customer Support</span></div>
+        <h3>Support Template Library</h3>
+        <p>8 ready-to-send replies for common order questions, tagged by type, written for fast responses.</p>
+        <a class="ai-link" href="https://vigorous-chef-c26.notion.site/Customer-Support-Template-Library-Nord-Oak-38e81366524c80fc807bd96c79bf4af4" target="_blank">View in Notion →</a>
       </div>
     </div>
 
-    <div class="sample-card">
-      <span class="sample-tag">CRM · Lead Ops</span>
-      <h3>Lead Pipeline Tracker</h3>
-      <p>A mock CRM lead database modelled on real outreach workflows — the same structure used during 12 months of CRM operations at PEMA.io, rebuilt in Notion and mirrored in HubSpot.</p>
-      <div class="sample-detail">
-        <div class="sample-detail-item">Lifecycle stages: New → Contacted → Follow-up → Closed</div>
-        <div class="sample-detail-item">Outreach cadence, notes, and last-contact tracking</div>
-        <div class="sample-detail-item">Mirrored in HubSpot free portal with deal pipeline and dashboard</div>
+    <div class="ai-card">
+      <a href="lead-pipeline.jpg" target="_blank"><img src="lead-pipeline.jpg" alt="Notion lead pipeline with status, last contact, next action and channel" loading="lazy"></a>
+      <div class="ai-body">
+        <div class="ai-top"><span class="sample-tag">CRM · Lead Ops</span></div>
+        <h3>Lead Pipeline Tracker</h3>
+        <p>A mock CRM pipeline with stages, next actions and channels, mirroring HubSpot Sales Hub.</p>
+        <a class="ai-link" href="https://vigorous-chef-c26.notion.site/Lead-Pipeline-Tracker-CRM-Operations-Sample-38e81366524c80ec8bc3e50c548f3656" target="_blank">View in Notion →</a>
       </div>
-      <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--rule);">
-        <a href="https://vigorous-chef-c26.notion.site/Lead-Pipeline-Tracker-CRM-Operations-Sample-38e81366524c80ec8bc3e50c548f3656" style="font-size:0.8rem;color:var(--teal);text-decoration:none;font-weight:500;" target="_blank">View work sample →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- AI & AUTOMATION PROJECTS -->
+<section id="ai">
+  <div class="section-label">AI &amp; Automation Projects</div>
+  <p style="max-width:640px;font-size:0.95rem;color:var(--mid);line-height:1.7;margin-bottom:28px;">
+    Tools I have built with automation, no-code and AI, at work and on my own time.
+  </p>
+  <div class="ai-grid">
+
+    <div class="ai-card">
+      <a href="flow-abandoned.jpg" target="_blank"><img src="flow-workflows.jpg" alt="Four active Shopify Flow workflows: sales channel tagging, high-value orders, abandoned checkout, low inventory" loading="lazy"></a>
+      <div class="ai-body">
+        <div class="ai-top"><span class="sample-tag">Shopify Flow</span><span class="ai-status live">In use</span></div>
+        <h3>Order &amp; Inventory Automations</h3>
+        <p>Workflows that tag high-value orders, recover abandoned checkouts and flag low stock.</p>
+        <div class="sample-detail-item">At Sportcify: about half the manual work per ticket</div>
+        <div class="sample-detail-item">4 live workflows in the Nord &amp; Oak demo store</div>
+      </div>
+    </div>
+
+    <div class="ai-card">
+      <a href="jobflow.jpg" target="_blank"><img src="jobflow.jpg" alt="Jobflow application tracker with stats, filters and table view" loading="lazy"></a>
+      <div class="ai-body">
+        <div class="ai-top"><span class="sample-tag">Base44 · AI builder</span><span class="ai-status live">Live</span></div>
+        <h3>Jobflow</h3>
+        <p>A job application tracker I scoped and built by prompting Base44.</p>
+        <div class="sample-detail-item">Runs my own pipeline of 100+ applications</div>
+        <div class="sample-detail-item">Table, kanban and calendar views, CSV export</div>
+      </div>
+    </div>
+
+    <div class="ai-card">
+      <a href="make-scenario.jpg" target="_blank"><img class="fit" src="make-scenario.jpg" alt="Make scenario: webhook, Google Sheets lookup, router, OpenAI and HTTP response" loading="lazy"></a>
+      <div class="ai-body">
+        <div class="ai-top"><span class="sample-tag">Make · ChatGPT API</span><span class="ai-status paused">Paused</span></div>
+        <h3>AI Financial Coach</h3>
+        <p>A chatbot for the emotions behind overspending, a 21-day money reset and a debt payoff plan.</p>
+        <div class="sample-detail-item">Webhook, Sheets lookup, router for new and existing users, OpenAI reply</div>
+        <div class="sample-detail-item">Paused before launch: API costs didn't make sense yet</div>
+      </div>
+    </div>
+
+    <div class="ai-card">
+      <a href="ops-dashboard.jpg" target="_blank"><img src="ops-dashboard.jpg" alt="E-commerce operations dashboard with revenue, orders, ad spend, ROAS and refund rate" loading="lazy"></a>
+      <div class="ai-body">
+        <div class="ai-top"><span class="sample-tag">Base44 · Dashboard</span><span class="ai-status paused">Prototype</span></div>
+        <h3>E-commerce Ops Dashboard</h3>
+        <p>Orders, refunds, fulfillment, suppliers, ad ROAS and in-store sales in one view.</p>
+        <div class="sample-detail-item">Month-on-month and year-to-date views</div>
+        <div class="sample-detail-item">Paused at the paid API integration stage</div>
+      </div>
+    </div>
+
+    <div class="ai-card">
+      <a href="debt-tracker.jpg" target="_blank"><img src="debt-tracker.jpg" alt="Debt payoff tracker with avalanche and snowball strategies" loading="lazy"></a>
+      <div class="ai-body">
+        <div class="ai-top"><span class="sample-tag">Base44 · Finance app</span><span class="ai-status paused">Prototype</span></div>
+        <h3>Debt Payoff Tracker</h3>
+        <p>Tracks debts, income and payments, and projects a payoff date.</p>
+        <div class="sample-detail-item">Avalanche and snowball payoff strategies</div>
+        <div class="sample-detail-item">Budget view and a what-if simulator</div>
+      </div>
+    </div>
+
+    <div class="ai-card">
+      <div class="ai-steps">
+        <span>Posting</span><i>→</i><span>Legit check</span><i>→</i><span>Fit</span><i>→</i><span>Salary</span><i>→</i><span>Tailored CV</span><i>→</i><span>Link check</span>
+      </div>
+      <div class="ai-body">
+        <div class="ai-top"><span class="sample-tag">Claude · Python</span><span class="ai-status live">In use</span></div>
+        <h3>AI-Assisted Job Search</h3>
+        <p>A repeatable process for screening roles and producing tailored one-page CVs with Python.</p>
+        <div class="sample-detail-item">Same screening rules applied to every posting</div>
+        <div class="sample-detail-item">AI output checked against source facts before sending</div>
       </div>
     </div>
 
@@ -772,7 +888,7 @@
       </div>
       <div>
         <div class="exp-title">E-commerce & Operations Support Specialist</div>
-        <div class="exp-desc">Managed Shopify backend operations including product uploads, inventory maintenance, and order processing workflows. Resolved customer order issues and collaborated cross-functionally to improve store efficiency and reduce operational disruptions.</div>
+        <div class="exp-desc">Run backend operations, from product and inventory data to order processing. Built Shopify Flow automations for order tagging, checkout recovery and inventory alerts that cut manual work per ticket by roughly half, and fix the workflows behind recurring issues.</div>
         <div class="exp-tags">
           <span class="exp-tag">Shopify</span>
           <span class="exp-tag">Order Management</span>
@@ -822,7 +938,7 @@
         <div class="exp-co">ChiroQueens</div>
       </div>
       <div>
-        <div class="exp-title">Operations Support — Lead Generation & CRM</div>
+        <div class="exp-title">Operations Support: Lead Generation &amp; CRM</div>
         <div class="exp-desc">Maintained and updated lead tracking systems, supported outreach and follow-up coordination, and ensured reliable data tracking for performance monitoring and reporting.</div>
         <div class="exp-tags">
           <span class="exp-tag">Lead Tracking</span>
@@ -834,12 +950,12 @@
 
     <div class="exp-item">
       <div class="exp-meta">
-        <div class="exp-date">2018 – 2021</div>
+        <div class="exp-date">Mar 2017 – Dec 2021</div>
         <div class="exp-co">Sutherland</div>
       </div>
       <div>
-        <div class="exp-title">Strategic Partner Master Trainer → Technical Trainer</div>
-        <div class="exp-desc">Led trainer certification programs and developed new hire customer service representatives over 3+ years. Consistently achieved 85%+ trainee endorsement rate and 95% satisfaction rating across cohorts.</div>
+        <div class="exp-title">Strategic Partner Master Trainer · Senior Trainer · Sales Consultant</div>
+        <div class="exp-desc">AT&amp;T account. Started on sales and billing accounts (Top Agent, Q1 2018), then spent 3+ years onboarding new hires and certifying trainers across country sites, with an 85%+ endorsement rate and 95% satisfaction. Helped launch new sites in Bogotá (6 months on site) and Egypt.</div>
         <div class="exp-tags">
           <span class="exp-tag">Training</span>
           <span class="exp-tag">Process Documentation</span>
@@ -871,6 +987,13 @@
       <span class="cert-year">June 2026</span>
     </div>
     <div class="cert-card">
+      <div class="cert-icon">🎓</div>
+      <h4>HubSpot Revenue Operations</h4>
+      <p>HubSpot Academy</p>
+      <span class="cert-status">✓ Completed</span>
+      <span class="cert-year">August 2026</span>
+    </div>
+    <div class="cert-card">
       <div class="cert-icon">🏬</div>
       <h4>Shopify for Business</h4>
       <p>Shopify Academy</p>
@@ -879,7 +1002,7 @@
     </div>
     <div class="cert-card">
       <div class="cert-icon">💼</div>
-      <h4>Mini MBA — Business Administration</h4>
+      <h4>Mini MBA: Business Administration</h4>
       <p>European Institute of Leadership & Management</p>
       <span class="cert-status">✓ Completed</span>
       <span class="cert-year">2025</span>
@@ -894,25 +1017,25 @@
     <div class="about-text">
       <h2>Operations is where chaos<br>becomes <em style="font-style:italic;color:var(--teal)">a system.</em></h2>
       <p>
-        I've spent five years making sure things run — orders get fulfilled, leads get followed up,
+        I've spent years making sure things run: orders get fulfilled, leads get followed up,
         support tickets get answered, and nothing falls through the cracks. That's the work I love,
         and I'm good at it.
       </p>
       <p>
-        My background spans e-commerce operations at Sportcify, CRM management at PEMA.io,
-        content operations at Parlé Mag, and three years training customer service teams at Sutherland.
+        My background spans operations and automation at Sportcify, CRM and revenue operations at PEMA.io,
+        content operations at Parlé Mag, and over three years training and certifying teams at Sutherland.
         The training background matters: I document processes clearly, onboard fast, and don't need
         hand-holding once I understand the system.
       </p>
       <p>
-        I'm currently based in Madrid, Spain. I work in English (professional level), speak Filipino
-        natively, and am actively learning Spanish. Available immediately for full-time remote roles
-        and open to in-person opportunities in Madrid.
+        I'm currently based in Madrid, Spain. I work in fluent English, speak Filipino
+        natively, and am actively learning Spanish. Available immediately for hybrid, in-office
+        and remote roles in Madrid and across Spain.
       </p>
     </div>
     <div class="about-sidebar">
       <div class="about-photo">
-        <img src="headshot.jpg" alt="Karbeh Zharie Darjani">
+        <img src="headshot.jpg" alt="Karbeh Darjani">
       </div>
       <div class="sidebar-row">
         <span class="sidebar-label">Location</span>
@@ -924,11 +1047,11 @@
       </div>
       <div class="sidebar-row">
         <span class="sidebar-label">Languages</span>
-        <span class="sidebar-val">English (professional)<br>Filipino (native)<br>Spanish (learning · A1)</span>
+        <span class="sidebar-val">English (fluent)<br>Filipino (native)<br>Spanish (learning · A1)</span>
       </div>
       <div class="sidebar-row">
         <span class="sidebar-label">Strong in</span>
-        <span class="sidebar-val">Shopify · HubSpot · Gorgias<br>Notion · Zapier · Google Workspace</span>
+        <span class="sidebar-val">Shopify · HubSpot · Zendesk<br>Notion · Make · Google Workspace</span>
       </div>
       <div class="sidebar-row">
         <span class="sidebar-label">LinkedIn</span>
@@ -957,7 +1080,7 @@
 </div>
 
 <footer>
-  <span>Karbeh Zharie Darjani · Operations &amp; E-commerce VA</span>
+  <span>Karbeh Darjani · Operations, CRM &amp; Automation</span>
   <span>Madrid, Spain · Available for remote roles worldwide</span>
 </footer>
 
