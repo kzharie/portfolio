@@ -144,9 +144,19 @@
   /* SECTIONS */
   section { padding: 72px 5%; border-bottom: 1px solid var(--rule); }
   .section-label {
-    font-size: 0.75rem; font-weight: 500;
+    font-size: 0.85rem; font-weight: 600;
     letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--warm); margin-bottom: 40px;
+    color: var(--warm); margin-bottom: 32px;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: 400; line-height: 1.15; color: var(--ink);
+    margin-bottom: 32px;
+  }
+  .section-title::after {
+    content: ''; display: block; width: 48px; height: 2px;
+    background: var(--teal); margin-top: 14px;
   }
 
   /* FEATURED STORE: new section */
@@ -739,7 +749,7 @@
 
 <!-- WORK SAMPLES -->
 <section id="work">
-  <div class="section-label">Work Samples</div>
+  <h2 class="section-title">Work Samples</h2>
   <div class="ai-grid">
 
     <div class="ai-card">
@@ -801,7 +811,7 @@
 
 <!-- AI & AUTOMATION PROJECTS -->
 <section id="ai">
-  <div class="section-label">AI &amp; Automation Projects</div>
+  <h2 class="section-title">AI &amp; Automation Projects</h2>
   <p style="max-width:640px;font-size:0.95rem;color:var(--mid);line-height:1.7;margin-bottom:28px;">
     Tools I have built with automation, no-code and AI, at work and on my own time.
   </p>
@@ -880,7 +890,7 @@
 
 <!-- EXPERIENCE -->
 <section id="experience">
-  <div class="section-label">Experience</div>
+  <h2 class="section-title">Experience</h2>
   <div class="exp-list">
 
     <div class="exp-item">
@@ -972,7 +982,7 @@
 
 <!-- CERTIFICATIONS -->
 <section id="certs">
-  <div class="section-label">Certifications</div>
+  <h2 class="section-title">Certifications</h2>
   <div class="certs-grid">
     <div class="cert-card">
       <div class="cert-icon">🎓</div>
